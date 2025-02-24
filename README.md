@@ -1,1 +1,3 @@
 # JSmith
+
+Life is spicy.
