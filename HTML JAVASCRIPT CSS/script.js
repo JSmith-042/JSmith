@@ -4,6 +4,7 @@
 //     Based on their input, determine how many years old they are.
 //     Log the calculated age to the console: “Your age is:”
 
+/*
 function ageCalc()
 {
     let birthYear = prompt("Please enter your birth year: ");
@@ -11,7 +12,7 @@ function ageCalc()
     console.log("Your age is: " + birthYear);
 }
 ageCalc();
-
+*/
 
 // 2. Simple Interest Calculator
 // Use a traditional function named calculateSimpleInterest to calculate the simple interest using the formula:
@@ -19,6 +20,18 @@ ageCalc();
 // Prompt the user for the principal amount, rate of interest, and time in years using prompt().
 //     Store each of these in a separate variable
 // Log the result to the console: “Your simple interest is:”
+function calculateSimpleInterest()
+{
+    let principle = prompt("Enter the principle amount: ");
+    let rate = prompt("Enter the rate of interest: ");
+    let years = prompt("Enter the length of the loan in years: ");
+
+    console.log("Your simple interest is: " + (principle * rate * years)/100);
+}
+calculateSimpleInterest();
+
+
+
 // 3. Favorite Color Selector
 // Create an array with three colors.
 //     Use a traditional function named addColor to add a new color to an array.
