@@ -42,8 +42,9 @@ calculateSimpleInterest();
 //     Prepend the users color to the existing array
 // Log the updated array to the console using: “Updated colors: “
 
-let colors = ["red", "green", "blue"];
 
+/*
+let colors = ["red", "green", "blue"];
 function addColor(colorArray)
 {
     let inputColor = prompt("Input a color name to add to my array");
@@ -53,6 +54,7 @@ function addColor(colorArray)
     console.log("Updated colors: " + colorArray);
 }
 addColor(colors);
+*/
 
 // 4. Event Countdown with Date Object
 // Use a traditional function named calculateDaysUntil to calculate the number of days remaining until a future event.
@@ -61,6 +63,32 @@ addColor(colors);
 //     If not in this format - make the user enter in correct format
 // Use the Date object to calculate the difference in days between today and the event.
 //     Log the result to the console using: “Days until the event: “.
+
+function calculateDaysUntil(inputDate)
+{
+    let eventDate = new Date(inputDate);
+    const lengthOfDayInMilli = 1000 * 3600 * 24;
+    return Math.round((eventDate - new Date()) / lengthOfDayInMilli) + 1;
+}
+
+function isValid(inputDate)
+{
+    //Check for the '-'s
+    if (inputDate.indexOf("-", inputDate.indexOf("-") + 1) <= 0)
+        return false;
+
+    let output = new Date(inputDate);
+
+    return !isNaN(output);
+}
+
+let userDate = prompt("Enter the event date in the format YYYY-MM-DD.");
+
+while (!isValid(userDate))
+    userDate = prompt("Please enter a valid event date in the format YYYY-MM-DD.");
+
+console.log("Days until the event: " + calculateDaysUntil(userDate));
+
 // 5. Temperature Classifier
 // Use a traditional function named classifyTemperature to classify a temperature.
 //     Takes one argument - user input for temperature
