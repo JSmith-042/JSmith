@@ -64,6 +64,7 @@ addColor(colors);
 // Use the Date object to calculate the difference in days between today and the event.
 //     Log the result to the console using: “Days until the event: “.
 
+/*
 function calculateDaysUntil(inputDate)
 {
     let eventDate = new Date(inputDate);
@@ -88,6 +89,7 @@ while (!isValid(userDate))
     userDate = prompt("Please enter a valid event date in the format YYYY-MM-DD.");
 
 console.log("Days until the event: " + calculateDaysUntil(userDate));
+ */
 
 // 5. Temperature Classifier
 // Use a traditional function named classifyTemperature to classify a temperature.
@@ -102,6 +104,31 @@ console.log("Days until the event: " + calculateDaysUntil(userDate));
 // “Chilly” for everything else
 // Error message if number not entered
 // Log the classification to the console using: “The temperature is: “
+
+function classifyTemperature(inputTemp)
+{
+    let fahrenheit = (inputTemp * (9/5)) + 32;
+
+    if (fahrenheit > 100)
+        return "Hot";
+
+    if (fahrenheit > 80)
+        return "Warm";
+
+    if (fahrenheit < 40)
+        return "Cold";
+
+    return "Chilly";
+}
+
+let input = prompt("Input the temperature in Celsius.");
+
+while (isNaN(+input))
+    input = prompt("Please input a valid number for temperature in Celsius.");
+
+console.log("The temperature is: " + classifyTemperature(input));
+
+
 // 6. Student Array Operations
 // Hardcode an array of students, each with a name and age based on this info: Alice is 20, Bob is 22, and Charlie is 18
 // Use a fat arrow function to modify a student's age in an array of student objects.
