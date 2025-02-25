@@ -20,7 +20,10 @@ ageCalc();
 // Prompt the user for the principal amount, rate of interest, and time in years using prompt().
 //     Store each of these in a separate variable
 // Log the result to the console: “Your simple interest is:”
+
+/*
 function calculateSimpleInterest()
+
 {
     let principle = prompt("Enter the principle amount: ");
     let rate = prompt("Enter the rate of interest: ");
@@ -29,8 +32,7 @@ function calculateSimpleInterest()
     console.log("Your simple interest is: " + (principle * rate * years)/100);
 }
 calculateSimpleInterest();
-
-
+*/
 
 // 3. Favorite Color Selector
 // Create an array with three colors.
@@ -39,6 +41,19 @@ calculateSimpleInterest();
 // Prompt the user to input a color name to add to the array.
 //     Prepend the users color to the existing array
 // Log the updated array to the console using: “Updated colors: “
+
+let colors = ["red", "green", "blue"];
+
+function addColor(colorArray)
+{
+    let inputColor = prompt("Input a color name to add to my array");
+
+    colorArray.unshift(inputColor);
+
+    console.log("Updated colors: " + colorArray);
+}
+addColor(colors);
+
 // 4. Event Countdown with Date Object
 // Use a traditional function named calculateDaysUntil to calculate the number of days remaining until a future event.
 //     Takes one argument - users event date
