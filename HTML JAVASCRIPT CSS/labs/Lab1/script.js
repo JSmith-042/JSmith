@@ -170,17 +170,32 @@ console.log("Updated students: ", students)
 // ONLY use ternaries!!!!
 //     Log the result to the console using: “The grade classification is: “
 
+/*
 let classifyGrade = (grade) => {return (grade >= 90 ? "A" : grade >= 80 ? "B" : grade >= 70 ? "C" : grade >= 60 ? "D" : "F")};
 
 let num = prompt("Enter a number grade");
 
 console.log ("The grade classification is: ", classifyGrade(num));
+*/
+
 
 // 8. Shopping List Operations
 // Hardcode an array representing a shopping list of eggs, butter, flour, and eggs.
 //     Use a fat arrow function named modifyItem to modify items in an array.
 //     Takes two arguments - the shopping list array and the prompted new item form user.
 //     Log the updated array to the console using: “Updated shopping list: “.
+
+let shopping = ["eggs", "butter", "flour", "eggs"];
+
+let modifyItem = (array, newItem) => {array.push(newItem); return array;}
+
+let userInput = prompt("Enter a new item to add to the shopping list");
+
+shopping = modifyItem(shopping, userInput);
+
+console.log("Updated shopping list: ", shopping);
+
+
 // 9. Weekday Detector
 // Use a fat arrow function to determine the day of the week.
 //     Use the Date object to get the current day.
