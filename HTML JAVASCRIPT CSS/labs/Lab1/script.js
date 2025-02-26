@@ -141,7 +141,7 @@ else
 // Update the student’s age in the array of objects.
 //     Log the updated array to the console: “Updated students: ”
 
-
+/*
 let students = {"alice" : 20, "bob" : 22, "charlie" : 18};
 
 //get user input
@@ -161,8 +161,7 @@ let modify = (name, age) => {if (typeof (students[name]) != "undefined") {studen
 
 students = modify(name, age);
 console.log("Updated students: ", students)
-
-
+*/
 
 // 7. Grade Classification
 // Use a fat arrow function named classifyGrade to classify grades.
@@ -170,6 +169,13 @@ console.log("Updated students: ", students)
 //     Use conditionals to classify the grade as "A," "B," "C," "D," or "F."
 // ONLY use ternaries!!!!
 //     Log the result to the console using: “The grade classification is: “
+
+let classifyGrade = (grade) => {return (grade >= 90 ? "A" : grade >= 80 ? "B" : grade >= 70 ? "C" : grade >= 60 ? "D" : "F")};
+
+let num = prompt("Enter a number grade");
+
+console.log ("The grade classification is: ", classifyGrade(num));
+
 // 8. Shopping List Operations
 // Hardcode an array representing a shopping list of eggs, butter, flour, and eggs.
 //     Use a fat arrow function named modifyItem to modify items in an array.
