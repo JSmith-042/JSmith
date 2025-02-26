@@ -105,6 +105,7 @@ console.log("Days until the event: " + calculateDaysUntil(userDate));
 // Error message if number not entered
 // Log the classification to the console using: “The temperature is: “
 
+/*
 function classifyTemperature(inputTemp)
 {
     let fahrenheit = (inputTemp * (9/5)) + 32;
@@ -127,7 +128,7 @@ while (isNaN(+input))
     input = prompt("Please input a valid number for temperature in Celsius.");
 
 console.log("The temperature is: " + classifyTemperature(input));
-
+*/
 
 // 6. Student Array Operations
 // Hardcode an array of students, each with a name and age based on this info: Alice is 20, Bob is 22, and Charlie is 18
@@ -138,6 +139,7 @@ console.log("The temperature is: " + classifyTemperature(input));
 // If not a number, log an error message
 // Update the student’s age in the array of objects.
 //     Log the updated array to the console: “Updated students: ”
+
 // 7. Grade Classification
 // Use a fat arrow function named classifyGrade to classify grades.
 //     Prompt the user to input a grade as a number.
