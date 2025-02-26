@@ -201,11 +201,14 @@ console.log("Updated shopping list: ", shopping);
 // Use a fat arrow function to determine the day of the week.
 //     Use the Date object to get the current day.
 //     Log the day of the week to the console using: “Today is: “
+
+/*
 const weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
 let dayOfWeek = () => {let obj = new Date(); return obj.getDay();}
 
 console.log("Today is: " + weekdays[dayOfWeek()]);
+*/
 
 // 10. How Long Until Graduation
 // Use a fat arrow function to determine the day of the week.
@@ -217,3 +220,19 @@ console.log("Today is: " + weekdays[dayOfWeek()]);
 // Log how many days left between the current date and last day of course work to the console using: “And you have <days> left in this web design program until graduation. “
 // Last day is 5/17/25
 // Rough idea. Does not need to be 100% accurate but should be within a few days of actual answer.
+
+let ord = (n) => {return n>3 && n<21 ? "th" : n%10==1 ? "st" : n%10 == 2 ? "nd" : n%10 == 3 ? "rd" : "th"};
+let currentDate = new Date();
+const monthNames = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+];
+
+console.log("Today is: " + currentDate.getFullYear() + ", " + monthNames[currentDate.getMonth()] + " " + currentDate.getDate() + ord(currentDate.getDate));
+
+let calculateDaysUntil = (inputDate) => {
+    let eventDate = new Date(inputDate);
+    const lengthOfDayInMilli = 1000 * 3600 * 24;
+    return Math.round((eventDate - new Date()) / lengthOfDayInMilli) + 1;
+}
+
+console.log("And you have ", calculateDaysUntil("5/17/25"), "days left in this web design program until graduation.")
