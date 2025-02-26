@@ -185,6 +185,7 @@ console.log ("The grade classification is: ", classifyGrade(num));
 //     Takes two arguments - the shopping list array and the prompted new item form user.
 //     Log the updated array to the console using: “Updated shopping list: “.
 
+/*
 let shopping = ["eggs", "butter", "flour", "eggs"];
 
 let modifyItem = (array, newItem) => {array.push(newItem); return array;}
@@ -194,12 +195,18 @@ let userInput = prompt("Enter a new item to add to the shopping list");
 shopping = modifyItem(shopping, userInput);
 
 console.log("Updated shopping list: ", shopping);
-
+*/
 
 // 9. Weekday Detector
 // Use a fat arrow function to determine the day of the week.
 //     Use the Date object to get the current day.
 //     Log the day of the week to the console using: “Today is: “
+const weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+let dayOfWeek = () => {let obj = new Date(); return obj.getDay();}
+
+console.log("Today is: " + weekdays[dayOfWeek()]);
+
 // 10. How Long Until Graduation
 // Use a fat arrow function to determine the day of the week.
 //     Use the Date object to get the current day.
