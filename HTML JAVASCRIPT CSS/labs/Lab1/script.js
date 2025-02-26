@@ -105,7 +105,7 @@ console.log("Days until the event: " + calculateDaysUntil(userDate));
 // Error message if number not entered
 // Log the classification to the console using: “The temperature is: “
 
-
+/*
 function classifyTemperature(inputTemp)
 {
     let fahrenheit = (inputTemp * (9/5)) + 32;
@@ -129,7 +129,7 @@ if (isNaN(+input)) {
 }
 else
     console.log("The temperature is: " + classifyTemperature(input));
-
+*/
 
 // 6. Student Array Operations
 // Hardcode an array of students, each with a name and age based on this info: Alice is 20, Bob is 22, and Charlie is 18
@@ -142,8 +142,25 @@ else
 //     Log the updated array to the console: “Updated students: ”
 
 
-//let students = {"Alice" : 20, "Bob" : 22, "Charlie" : 18};
+let students = {"alice" : 20, "bob" : 22, "charlie" : 18};
 
+//get user input
+let name = prompt("Enter the name of the student to modify").toLowerCase();
+
+if (typeof (students[name]) == "undefined")
+    console.error("Student name entered does not exist");
+
+let age = prompt("Enter new age for student");
+
+if (isNaN(+age))
+    console.error("Entered age is not a valid number");
+
+age = Number(age);
+
+let modify = (name, age) => {if (typeof (students[name]) != "undefined") {students[name] = age; return students; } else return "invalid input."};
+
+students = modify(name, age);
+console.log("Updated students: ", students)
 
 
 
