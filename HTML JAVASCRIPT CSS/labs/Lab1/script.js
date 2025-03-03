@@ -221,13 +221,14 @@ console.log("Today is: " + weekdays[dayOfWeek()]);
 // Last day is 5/17/25
 // Rough idea. Does not need to be 100% accurate but should be within a few days of actual answer.
 
-let ord = (n) => {return n>3 && n<21 ? "th" : n%10==1 ? "st" : n%10 == 2 ? "nd" : n%10 == 3 ? "rd" : "th"};
+let ord = (n) => {return n>3 && n<21 ? "th" : n%10===1 ? "st" : n%10 === 2 ? "nd" : n%10 === 3 ? "rd" : "th"};
 let currentDate = new Date();
 const monthNames = ["January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
 ];
+console.log(currentDate.getDate());
 
-console.log("Today is: " + currentDate.getFullYear() + ", " + monthNames[currentDate.getMonth()] + " " + currentDate.getDate() + ord(currentDate.getDate));
+console.log("Today is: " + currentDate.getFullYear() + ", " + monthNames[currentDate.getMonth()] + " " + currentDate.getDate() + ord(currentDate.getDate()));
 
 let calculateDaysUntil = (inputDate) => {
     let eventDate = new Date(inputDate);

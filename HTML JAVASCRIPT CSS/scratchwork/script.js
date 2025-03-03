@@ -1,8 +1,17 @@
 
-let num = 5;
-let num = 6;
+// Dynamic age calculator
 
-if (num%2 === 0) //even
-    console.log("even")
-else
-    console.log("odd")
+let birthyear = prompt("Enter your birth year");
+let age = calculateAge(birthyear);
+window.alert( "Your age is :"+ age);
+
+
+function calculateAge(birthyear) {
+    let currentyear = new Date().getFullYear();
+    let age = currentyear - birthyear;
+    return age;
+}
+
+
+
+
