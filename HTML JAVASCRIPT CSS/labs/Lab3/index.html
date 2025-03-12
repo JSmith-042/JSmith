@@ -2,12 +2,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-  <link rel="stylesheet" href="style.css">
+    <title>Lab3 - Dog Image Generator</title>
+    <link rel="stylesheet" href="bootstrap/http_cdn.jsdelivr.net_npm_bootstrap@5.3.3_dist_css_bootstrap.css">
+    <style>body {
+        background-color: #303051;
+        opacity: 0.8;
+        background-image: radial-gradient(#f1f1f1 1.1px, transparent 1.1px), radial-gradient(#f1f1f1 1.1px, #303051 1.1px);
+        background-size: 44px 44px;
+        background-position: 0 0, 22px 22px;
+    }
+
+    ></style>
+    <script src="https://kit.fontawesome.com/a979e0f617.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
+<div class="container text-center">
+    <h1 style="color:#169a08">By Breed Dog Image Generator</h1>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="dropdown">
+                <button class="btn btn-lg btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                    Select Dog Breed
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#" onclick="getCollectionFromBreed('collie')" id="collie">Border
+                        Collie</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="getCollectionFromBreed('eskimo')"
+                           id="eskimo">Eskimo</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#" onclick="getCollectionFromBreed('mastiff')" id="mastiff">Tibetan
+                        Mastiff</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="imgBox" >
+                <img class="img-fluid" id="dog" alt="doggies" src="" style="visibility: hidden">
+            </div>
+        </div>
+    </div>
+<button id="prev" class="carousel-control-prev fa-solid fa-backward-step" onclick="getPrev()"
+        style="color:lightgreen;font-size: xxx-large;background-color: transparent;border:none"></button>
+<button id="next" class="carousel-control-next fa-solid fa-forward-step" onclick="getNext()"
+        style="color:lightgreen;font-size: xxx-large;background-color: transparent;border:none"></button>
 
+</div>
 
-<script src="scripts.js"></script>
+<div id="alertPlaceholder"></div>
+<script src="bootstrap/http_cdn.jsdelivr.net_npm_bootstrap@5.3.3_dist_js_bootstrap.bundle.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
