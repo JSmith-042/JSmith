@@ -3,7 +3,6 @@ let picLimit = 10;
 
 function getCollectionFromBreed(breed)
 {
-
     dogs = [];
     console.log("getting breed: ", breed)
     document.querySelectorAll('*').forEach(function(node) {
@@ -44,6 +43,11 @@ function getCollectionFromBreed(breed)
         .catch(error => {document.querySelectorAll('*').forEach(function(node) {
             node.style.cursor = '';
         }); console.log(error)});
+
+        let el = document.querySelector("#alertClose");
+
+        if (el)
+            el.click();
 }
 
 const alertPlaceholder = document.getElementById('alertPlaceholder')
@@ -51,7 +55,7 @@ const sendAlert = (message, type) => {
     alertPlaceholder.innerHTML=[
         `<div class="alert alert-${type} alert-dismissible text-center" role="alert">`,
         `   <div style="color:darkred">${message}</div>`,
-        '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+        '   <button id="alertClose" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
         '</div>'
     ].join('')
 }
