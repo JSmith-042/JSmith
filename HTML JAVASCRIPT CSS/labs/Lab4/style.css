@@ -1,0 +1,17 @@
+/*Chose color theme based on color picker from my chosen background image*/
+body
+{
+    background-color: #465059;
+    background-image: url("./assets/background_seamless1.png");
+    width: 100vw;
+    background-size: contain;
+    background-repeat: repeat-y;
+}
+
+/*Google fonts*/
+.eagle-lake-regular {
+    font-family: "Eagle Lake", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
