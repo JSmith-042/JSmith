@@ -47,3 +47,9 @@ h1
 {
     color: #34cef5
 }
+
+.form-control, .form-select, .form-check-input
+{
+    background-color: rgba(108,104,104,0.4);
+    color: rgba(106,225,79,1)
+}
