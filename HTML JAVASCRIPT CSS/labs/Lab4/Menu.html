@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap" rel="stylesheet">
     <!--    Font Awesome-->
-    <link rel="preconnect" href="https://kit.fontawesome.com/" crossorigin="anonymous">
+    <link rel="preconnect" href="https://kit.fontawesome.com/a979e0f617.js" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/a979e0f617.js" crossorigin="anonymous"></script>
     <!--     Personal styles-->
     <link rel="stylesheet" href="style.css">
@@ -21,8 +21,11 @@
 <div>
     <nav class="navbar navbar-expand-lg bg-opacity-75 bg-dark navbar-dark h5 eagle-lake-regular">
         <div class="container">
-            <a class="navbar-brand" href="index.html"><img src="./assets/granny_icon.png" alt="Granny" width="35px" height="35px"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="index.html"><img src="./assets/granny_icon.png" alt="Granny" width="35px"
+                                                           height="35px"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -42,40 +45,24 @@
     </nav>
 </div>
 
-
-
-
-<table border="1" cellpadding="5px">
-    <tr>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Price</th>
-    </tr>
-    <tr>
-        <td>Porky</td>
-        <td>Pork Pot Pie</td>
-        <td>$15.45</td>
-    </tr>
-    <tr>
-        <td>Beefy</td>
-        <td>Beef Pot Pie</td>
-        <td>$19.99</td>
-    </tr>
-    <tr>
-        <td>Cluck Cluck</td>
-        <td>Chicken Pot Pie</td>
-        <td>$16.75</td>
-    </tr>
-    <tr>
-        <td>Glizzy</td>
-        <td>Hot Dog With Bun</td>
-        <td>$3.75</td>
-    </tr>
-    <tr>
-        <td>Triple Stacks</td>
-        <td>Three Pancakes With Toppings</td>
-        <td>$8.99</td>
-    </tr>
-</table>
+<div class="row">
+    <div class="col-lg-1"><button id="prev" class="carousel-control-prev"
+                                   style=";color:lightgreen;font-size: xxx-large;background-color: transparent;border:none"><span class="fa-solid fa-backward-step"></span>Prev</button></div>
+    <div class="col-lg-5">
+        <div id="imgBox" style="text-align: right">
+            <img id="menu_pic" style="width: 75%; height: 75%; object-fit: contain">
+        </div>
+    </div>
+    <div class="col-lg-5" style="color:lightgreen">
+        <h2 id="menu_name"></h2>
+        <span id="menu_description"></span>
+        <span id="menu_price"></span>
+    </div>
+    <div class="col-lg-1">
+        <button id="next" class="carousel-control-next"
+                style="color:lightgreen;font-size: xxx-large;background-color: transparent;border:none">Next<span class="fa-solid fa-forward-step"></span></button>
+    </div>
+</div>
+<script src="Menu.js"></script>
 </body>
 </html>

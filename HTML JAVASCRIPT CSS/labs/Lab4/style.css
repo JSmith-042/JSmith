@@ -16,3 +16,9 @@ body
     font-style: normal;
 }
 
+.carousel-control-prev , .carousel-control-next {
+    position: relative;
+    text-align: center;
+    top: 49%;
+
+}
