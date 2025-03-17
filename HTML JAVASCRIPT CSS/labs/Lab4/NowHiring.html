@@ -46,6 +46,11 @@
 
 
 <form>
+
+
+
+
+
     <label for="fname">First name: </label>
     <input type="text" id="fname" name="fname" maxlength="20" required><br><br>
     <label for="lname">Last name: </label>
@@ -112,7 +117,7 @@
         <option value="WY">WY</option>
     </select><br><br>
     <label for="age">Age: </label>
-    <input type="number" id="age" name="age" required min="21" max="99" size="3"><br><br>
+    <input type="number" id="age" name="age" onchange="validateChange(this)"><br><br>
     <label for="phone">Phone: </label>
     <input type="tel" id="phone" name="phone" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="111-222-3333"><br><br>
     <label for="email">Email: </label>
@@ -142,5 +147,8 @@
     <button type="submit" value="Submit">Submit</button>
     <button type="reset" value="Reset">Reset</button>
 </form>
+
+<script src="bootstrap/http_cdn.jsdelivr.net_npm_bootstrap@5.3.3_dist_js_bootstrap.bundle.js"></script>
+<script src="NowHiring.js"></script>
 </body>
 </html>
