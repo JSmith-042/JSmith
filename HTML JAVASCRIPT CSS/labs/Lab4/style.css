@@ -9,6 +9,14 @@ body
     background-repeat: repeat;
 }
 
+h1
+{
+    font-family: "Eagle Lake", serif;
+    font-weight: 400;
+    font-style: normal;
+    color:#489db6
+}
+
 /*Google fonts*/
 .eagle-lake-regular {
     font-family: "Eagle Lake", serif;
@@ -16,9 +24,21 @@ body
     font-style: normal;
 }
 
-.carousel-control-prev , .carousel-control-next {
-    position: relative;
-    text-align: center;
-    top: 49%;
+.menu-text-header
+{
+    font-size: 4vw;
+}
 
+.menu-text {
+    font-size: 2vw;
+    color:lightgreen;
+}
+
+#menu-pic{
+    width: 90%; height: 90%; object-fit: contain
+}
+
+.menu-display
+{
+    background-color: rgba(108,104,104,0.78)
 }

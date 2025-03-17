@@ -16,8 +16,8 @@ function getPrev() {
         menuIndex = menuItems.length - 1;
 
     buildMenuItem(menuItems[menuIndex])
-    document.querySelector("#menu_pic").src = `./assets/${menuItems[menuIndex].name}.jpg`
-    document.querySelector("#menu_pic").alt = menuItems[menuIndex].description;
+    document.querySelector("#menu-pic").src = `./assets/${menuItems[menuIndex].name}.jpg`
+    document.querySelector("#menu-pic").alt = menuItems[menuIndex].description;
 }
 
 function getNext() {
@@ -27,8 +27,8 @@ function getNext() {
         menuIndex = 0;
 
     buildMenuItem(menuItems[menuIndex])
-    document.querySelector("#menu_pic").src = `./assets/${menuItems[menuIndex].name}.jpg`
-    document.querySelector("#menu_pic").alt = menuItems[menuIndex].description;
+    document.querySelector("#menu-pic").src = `./assets/${menuItems[menuIndex].name}.jpg`
+    document.querySelector("#menu-pic").alt = menuItems[menuIndex].description;
 }
 
 function buildMenuItem(item)

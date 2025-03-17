@@ -45,22 +45,25 @@
     </nav>
 </div>
 
-<div class="row">
-    <div class="col-lg-1"><button id="prev" class="carousel-control-prev"
-                                   style=";color:lightgreen;font-size: xxx-large;background-color: transparent;border:none"><span class="fa-solid fa-backward-step"></span>Prev</button></div>
-    <div class="col-lg-5">
-        <div id="imgBox" style="text-align: right">
-            <img id="menu_pic" style="width: 75%; height: 75%; object-fit: contain">
-        </div>
+        <h1 class="text-center" style="font-size: 5vw;">Menu</h1>
+
+<div class="row menu-display">
+    <div class="col-lg-6 col-md-6" style="text-align: right">
+            <img id="menu-pic">
     </div>
-    <div class="col-lg-5" style="color:lightgreen">
-        <h2 id="menu_name"></h2>
-        <span id="menu_description"></span>
-        <span id="menu_price"></span>
+    <div class="col-lg-6 col-md-6 text-center menu-text">
+        <p class="menu-text-header" id="menu_name"></p>
+        <p id="menu_description"></p>
+        <p id="menu_price"></p>
     </div>
-    <div class="col-lg-1">
-        <button id="next" class="carousel-control-next"
-                style="color:lightgreen;font-size: xxx-large;background-color: transparent;border:none">Next<span class="fa-solid fa-forward-step"></span></button>
+</div>
+<div class="row menu-display text-center">
+    <div class="col-lg-12">
+<!--        Font awesome used here!!!!!-->
+        <button class="menu-text" id="prev"  style="background-color: transparent;border:none;">
+            <span class="fa-solid fa-backward-step"></span>Prev</button>
+        <button class="menu-text" id="next" style="background-color: transparent;border:none">
+            Next<span class="fa-solid fa-forward-step"></span></button>
     </div>
 </div>
 <script src="Menu.js"></script>
