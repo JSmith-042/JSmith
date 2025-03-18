@@ -119,8 +119,11 @@
                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,12}$"
             title="Required 8-12 characters with at least 1 uppercase, 1 lowercase, 1 number, and 1 special char">
         </div>
-        <div class="col-lg-12">
-            <textarea class="form-control" id="info" name="info" rows="4" placeholder="Enter other information about yourself (30 char max)"></textarea>
+
+
+        <div class="col-lg-12 form-floating">
+            <textarea class="form-control" id="info" name="info" rows="4" style="resize: none"></textarea>
+            <label for="info" id="infoLabel">Enter other information about yourself (30 char max) <span id="count_message">0/30</span></label>
         </div>
 
         <div class="col-lg-12">

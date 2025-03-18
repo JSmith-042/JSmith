@@ -48,3 +48,22 @@ phoneInput.addEventListener("input", () =>{
         phoneInput.setCustomValidity("");
 });
 
+const infoInput = document.getElementById("info");
+
+infoInput.addEventListener("input", () =>{
+
+    let info = infoInput.value;
+    const text_max = 30
+
+    if (info.length > text_max) {
+       infoInput.value = info.substring(0, text_max);
+       infoInput.setCustomValidity("Maximum of " + text_max + " characters");
+       infoInput.reportValidity();
+    }
+    else
+        infoInput.setCustomValidity("")
+
+    let charCount = document.getElementById("count_message");
+    charCount.textContent = infoInput.value.length + "/" + text_max;
+});
+

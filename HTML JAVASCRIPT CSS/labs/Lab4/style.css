@@ -46,20 +46,31 @@ h1
     background-color: rgba(108,104,104,0.78)
 }
 
-.form-label, .form-check-label
+.form-label, .form-check-label, #count_message
 {
     color: #34cef5;
     text-shadow: 2px 2px 0px #000000;
 }
 
-.form-control, .form-select, .form-check-input
+.form-control, .form-select, .form-check-input, .form-control:focus
 {
     background-color: rgba(108,104,104,0.4);
     color: rgba(106,225,79,1);
-
 }
 
 .form-control::placeholder
 {
     color: rgba(106,225,79,1);
 }
+
+#infoLabel
+{
+    color: rgba(106,225,79,1);
+    text-shadow: none;
+}
+
+.form-floating > label::after {
+    background-color: transparent !important;
+}
+
+
