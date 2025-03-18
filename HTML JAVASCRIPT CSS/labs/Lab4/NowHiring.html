@@ -109,15 +109,23 @@
                 <label for="comp" class="form-label">Complicated</label>
             </div>
         </div>
+        <div class="col-lg-4">
+            <label for="email" class="form-label">Email </label>
+            <input type="email" class="form-control" id="email" name="email" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$">
+        </div>
+        <div class="col-lg-4">
+            <label for="pass" class="form-label">Password </label>
+            <input type="password" class="form-control" id="pass" name="pass" required
+                   pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,12}$">
+        </div>
+        <div class="col-lg-12">
+            <textarea class="form-control" id="info" name="info" rows="4" placeholder="Enter other information about yourself (30 char max)"></textarea>
+        </div>
 
 
         <button type="submit" class="btn btn-primary">Submit</button>
 
-        <label for="email">Email: </label>
-        <input type="email" id="email" name="email" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"><br><br>
-        <label for="pass">Password: </label>
-        <input type="password" id="pass" name="pass" required
-               pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,12}$"><br><br>
+
 
         <label>Favorite Color(s): </label>
         <input type="checkbox" id="color1" name="color1">
@@ -130,8 +138,7 @@
         <label for="color4">Green</label>
         <input type="checkbox" id="color5" name="color5">
         <label for="color5">Blue</label><br><br>
-        <label for="info">Enter other information about yourself (30 char max): </label><br>
-        <textarea id="info" name="info" maxlength="30" rows="4"></textarea>
+
         <button type="submit" value="Submit">Submit</button>
         <button type="reset" value="Reset">Reset</button>
     </form>
