@@ -46,7 +46,7 @@ h1
     background-color: rgba(108,104,104,0.78)
 }
 
-.form-label
+.form-label, .form-check-label
 {
     color: #34cef5;
     text-shadow: 2px 2px 0px #000000;
