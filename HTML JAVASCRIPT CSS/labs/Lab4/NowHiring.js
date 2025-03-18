@@ -67,3 +67,41 @@ infoInput.addEventListener("input", () =>{
     charCount.textContent = infoInput.value.length + "/" + text_max;
 });
 
+
+// overwrite the form submission
+let myForm = document.getElementById("hiring-form");
+
+myForm.addEventListener("submit", (event)=>{event.preventDefault(); onSubmit()})
+
+function onSubmit()
+{
+    //Collate form info
+    const formData = new FormData(myForm);
+
+    //Revalidate the three js validation inputs
+
+    if (ageInput.value.length === 0) //No age entered
+    {
+        ageInput.setCustomValidity("Age must be between 21 and 99");
+        ageInput.reportValidity();
+        return;
+    }
+
+    let phonePattern = /^\d{3}-\d{3}-\d{4}$/;
+
+    if (!phonePattern.test(phoneInput.value))
+    {
+        phoneInput.setCustomValidity("Phone number must be in format ###-###-####");
+        phoneInput.reportValidity();
+        return;
+    }
+
+    for (const [key, value] of formData.entries()) {
+
+        if (value !== "")
+            console.log(key, value);
+    }
+
+    //Reset form
+    document.getElementById("hiring-reset").click();
+}
