@@ -1,8 +1,8 @@
-export default function CardContainer({children})
+export default function CardContainer(props)
 {
     return(
             <div style={{border: "2px solid", padding: "20px"}}>
-                {children}
+                {props.children}
             </div>
     )
 
