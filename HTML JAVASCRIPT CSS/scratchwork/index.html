@@ -2,19 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Lab Projects</title>
-
-    <link rel="stylesheet" href="style.css">
+    <title>test</title>
 </head>
 <body>
+<table>
+    <colgroup >
+        <col >
+    </colgroup>
+</table>
 
-    <h1>Apple cider</h1>
-<h1>butter croissant</h1>
-<ul>
-    <li id="fruit">apple pound</li>
-    <li class="breakfast">buns</li>
-    <li class="breakfast">chunk brownie</li>
-</ul>
-<script src="script.js"></script>
+
+<script>
+    document.getElementsByTagName("button")[0].addEventListener("click", (event)=>{
+        event.preventDefault();
+
+        //check for number
+        let age = document.getElementById("age").value;
+
+        if (+age)
+        {
+            if (age > 18) {
+                alert("You are an awesome winner.")
+                return;
+            }
+        }
+
+        alert(`Age: ${age} is not a valid number greater than 18`)
+    })
+
+
+</script>
 </body>
 </html>
