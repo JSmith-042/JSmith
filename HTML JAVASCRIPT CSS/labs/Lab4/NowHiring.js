@@ -96,6 +96,11 @@ function onSubmit()
         return;
     }
 
+    if (infoInput.value.length <= 30)
+    {
+        infoInput.setCustomValidity("");
+    }
+
     for (const [key, value] of formData.entries()) {
 
         if (value !== "")
