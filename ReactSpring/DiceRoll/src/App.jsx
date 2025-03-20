@@ -1,14 +1,17 @@
 import { useState } from 'react'
-import './App.css'
+import './styles/App.css'
 import {genRanNum} from "./helper.js";
+import Dice from "./components/Dice.jsx";
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div>
-
-    </div>
+      <div>
+          <p>Roll the dice if you dare!</p>
+          <Dice num={genRanNum()}></Dice>
+          <Dice num={genRanNum()}></Dice>
+      </div>
   )
 }
 
