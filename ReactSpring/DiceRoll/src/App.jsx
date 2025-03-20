@@ -11,6 +11,7 @@ function App() {
           <p>Roll the dice if you dare!</p>
           <Dice num={genRanNum()}></Dice>
           <Dice num={genRanNum()}></Dice>
+
       </div>
   )
 }
