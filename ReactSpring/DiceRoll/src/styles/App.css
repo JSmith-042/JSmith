@@ -5,3 +5,15 @@ div
     padding: 0;
     text-align: center;
 }
+
+button
+{
+    background-color: darkcyan;
+    font-size: 30px;
+    color: #99ee8c;
+    border-style: groove;
+    border-radius: 10px;
+    border-color: lightblue;
+    border-width: 10px;
+    text-shadow: black 2px 2px 2px;
+}
