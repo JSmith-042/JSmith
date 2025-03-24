@@ -2,13 +2,27 @@
   background-color: lightgrey;
   background-image: url("../assets/lsw.jpg");
   background-repeat: repeat-y;
-  background-size: 100vw;
+  background-size: 100vw 100vh;
+  font-size: 1.3vw;
 }
 
 #appMain
 {
-  margin-top: 10px;
+  position: absolute;
+  top:30vh;
   width: 100vw;
   text-align: center;
   color: lightgray;
+  height: 10vh;
+}
+
+#tableDiv
+{
+  display: grid;
+  grid-template-columns: 33fr 34fr 33fr;
+}
+
+button
+{
+  font-size: 1.3vw;
 }

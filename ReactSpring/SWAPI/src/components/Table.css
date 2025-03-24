@@ -1,0 +1,8 @@
+td, th
+{
+    border-width: 2px;
+    border-color: red;
+    border-style: groove;
+    padding: 10px;
+    text-shadow: 1px 1px 1px #000000;
+}

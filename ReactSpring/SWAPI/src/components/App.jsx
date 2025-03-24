@@ -29,7 +29,8 @@ export default function App() {
     <div id="appMain">
       <button onClick={handleSubmit}>Submit</button>
       <button onClick={handleReset}>Reset</button>
-      <div>
+      <div id="tableDiv">
+          <div></div>
         {show ? <Table rows={rows}></Table> : null}
       </div>
     </div>
