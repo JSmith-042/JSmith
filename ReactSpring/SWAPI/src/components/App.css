@@ -1,7 +1,14 @@
 :root {
   background-color: lightgrey;
   background-image: url("../assets/lsw.jpg");
-  background-position: top;
   background-repeat: repeat-y;
   background-size: 100vw;
+}
+
+#appMain
+{
+  margin-top: 10px;
+  width: 100vw;
+  text-align: center;
+  color: lightgray;
 }

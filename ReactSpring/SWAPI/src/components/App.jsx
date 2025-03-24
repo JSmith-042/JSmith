@@ -1,12 +1,27 @@
-import { useState } from 'react'
+import {useEffect, useState} from 'react'
 import './App.css'
+import Table from "./Table.jsx";
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [show, setShow] = useState(false);
+  let comp = <></>;
+
+  useEffect(() => {
+
+
+  }, [show]);
+
+  let handleSubmit = () => {setShow(true);}
+
+  let handleReset = () => {setShow(false)}
 
   return (
-    <div>hello</div>
+    <div id="appMain">
+      <button onClick={handleSubmit}>Submit</button>
+      <button onClick={handleReset}>Reset</button>
+      <div>
+        {show ? <Table></Table> : null}
+      </div>
+    </div>
   )
 }
-
-export default App
