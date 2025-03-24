@@ -1,4 +1,9 @@
 export default function Table(props)
 {
-    return (<div>Your momma</div>);
+    if (props.rows.length == 0)
+        return(<div></div>);
+
+
+
+    return (<div>{props.rows.toString()}</div>);
 }
