@@ -1,16 +1,13 @@
 body {
-    background: #ffffff    no-repeat right top;
+    background: #ff0000;
 }
 
-h1.horse  {
-    font-size: 2em
+p
+{
+    color: white
 }
 
-p {
-    color: #gg0000; /* hex for red */
-    text-family: "Times New Roman", Times, serif;
-}
-
-#doggy  .horse  >  div {
-    display: non;
+div
+{
+    color:green;
 }
