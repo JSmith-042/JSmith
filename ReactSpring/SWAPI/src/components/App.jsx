@@ -14,21 +14,14 @@ export default function App() {
       if (!show)
           return;
 
-      try {
           axios.get(SWAPI_ENDPOINT)
               .then((response) => {
-                  console.log(response.status);
                   setRows(response.data.results);
               })
               .catch((exception) => {
                   console.log("Unable to connect to SWAPI!");
-                  console.log(exception)
               });
-      }
-      catch (exception)
-      {
-          console.log(exception)
-      }
+
   }, [show]);
 
   let handleSubmit = () => {setShow(true);}

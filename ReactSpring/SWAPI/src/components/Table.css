@@ -11,3 +11,10 @@ table
 {
     background-color: #0000009F;
 }
+
+#loading
+{
+    font-size: 3vw;
+    color: #0ca20c;
+    text-shadow: 2px 2px 2px black;
+}
