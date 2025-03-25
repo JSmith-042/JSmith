@@ -4,5 +4,10 @@ td, th
     border-color: red;
     border-style: groove;
     padding: 10px;
-    text-shadow: 1px 1px 1px #000000;
+    text-shadow: 1px 1px 7px #230350
+}
+
+table
+{
+    background-color: #0000009F;
 }
