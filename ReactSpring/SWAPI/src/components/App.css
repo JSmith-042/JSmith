@@ -25,4 +25,8 @@
 button
 {
   font-size: 1.3vw;
+  background-color: lightcyan;
+  border-style: groove;
+  border-color: black;
+  border-width: .3vw;
 }
