@@ -1,9 +1,9 @@
-export default function Greeting(props)
+export default function Greeting({name})
 {
     return(
     <>
 
-        <h1>Hello, {props.name}</h1>
+        <h1>Hello, {name}</h1>
     </>)
 
 }
