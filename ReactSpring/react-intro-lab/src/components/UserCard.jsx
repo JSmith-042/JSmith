@@ -7,5 +7,4 @@ export default function UserCard({name, age})
                 <p>{age}</p>
             </div>
         </>)
-
 }
