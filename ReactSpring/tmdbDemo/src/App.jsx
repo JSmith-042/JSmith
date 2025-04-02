@@ -19,7 +19,7 @@ function App() {
             params: {language: 'en-US', page: '1'},
             headers: {
                 accept: 'application/json',
-                Authorization: 'Bearer '
+                Authorization: 'Bearer ' + VITE_TMDB_API_TOKEN
             }
         };
         axios(options)
