@@ -19,14 +19,13 @@ function App() {
             params: {language: 'en-US', page: '1'},
             headers: {
                 accept: 'application/json',
-                Authorization: 'Bearer ' + VITE_TMDB_API_TOKEN
+                Authorization: `Bearer ${process.env.VITE_TMDB_API_TOKEN}`
             }
         };
         axios(options)
             .then(response => {
 
                 let movieArray = response.data.results.map((movie) => {return <MovieCard key={movie.id} movie={movie}/>})
-                console.log(movieArray)
                 setMovies(movieArray)})
             .catch(error => {
                  console.log(error.message)})
