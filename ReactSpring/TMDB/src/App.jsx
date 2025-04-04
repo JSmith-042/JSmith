@@ -6,6 +6,8 @@ import Results from "./components/Results.jsx";
 import Error from "./components/Error.jsx"
 import axios from "axios";
 import {SearchContext} from "./components/SearchContext.jsx";
+import {Button} from "@mui/material";
+import {AdultFilter, FilterAdultContent} from "./components/AdultFilter.js";
 
 function App() {
 
@@ -18,7 +20,7 @@ function App() {
         const options = {
             method: 'GET',
             url: `https://api.themoviedb.org/3/search/movie?query=${searchContext}`,
-            params: {language: 'en-US', page: '1'},
+            params: {language: 'en-US', page: '1', include_adult: "false"},
             headers: {
                 accept: 'application/json',
                 Authorization: `Bearer ${process.env.VITE_TMDB_API_TOKEN}`
@@ -37,7 +39,7 @@ function App() {
     const options = {
       method: 'GET',
       url: 'https://api.themoviedb.org/3/movie/now_playing',
-      params: {language: 'en-US', page: '1'},
+      params: {language: 'en-US', page: '1', include_adult: "false"},
       headers: {
         accept: 'application/json',
         Authorization: `Bearer ${process.env.VITE_TMDB_API_TOKEN}`
@@ -45,9 +47,10 @@ function App() {
     };
     axios(options)
         .then(response => {
-          setNowPlayingMovies(response.data.results)})
+          setNowPlayingMovies(FilterAdultContent(response.data.results))})
         .catch(error => {
-          console.log("Unable to connect to TMDB")
+          console.log("Unable to connect to TMDB");
+            console.log(error)
         })
   }
 
@@ -60,9 +63,10 @@ function App() {
             <Routes>
               <Route path={"/"} element=<></>/>
               <Route path={"/now_playing"} element=<Results data={{movies: nowPlayingMovies}}/>/>
-              <Route path={"/search"} element=<Results data={{movies: searchResults}}/>/>
+              <Route path={"/search"} element=<Results data={{movies: searchResults}} search={true}/>/>
             </Routes>
             </SearchContext.Provider>
+            <Button onClick={handleShow}>Click me</Button>
         </div>
       </Router>
     </>

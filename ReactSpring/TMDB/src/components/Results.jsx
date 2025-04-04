@@ -1,10 +1,15 @@
 import Card from "./Card.jsx";
 import {Grid} from "@mui/material";
 
-export default function Results({data})
+export default function Results({data, search})
 {
-    if (!data)
+    console.log(search)
+    if (!data) {
+        console.log("in results: " + search)
+        if(search)
+            return <h1>Searching...</h1>
         return <></>
+    }
 
     const {movies} = data;
 

@@ -45,7 +45,7 @@ export default function NavBar()
                         <Button color="inherit">Now Playing</Button>
                     </Link>
                 </Typography>
-                    <TextField color="inherit" label="Search" onChange={debounce(handleSearch, 500)} slotProps={{input: { endAdornment: (<SearchOutlined color="inherit"></SearchOutlined>)}}} />
+                    <TextField color="inherit" label="Search" onChange={debounce(handleSearch, 250)} slotProps={{input: { endAdornment: (<SearchOutlined color="inherit"></SearchOutlined>)}}} />
             </Toolbar>
         </AppBar>
     </Box>)
