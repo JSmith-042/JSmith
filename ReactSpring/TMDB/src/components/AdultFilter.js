@@ -1,4 +1,4 @@
-export const AdultFilter = [ "day" ];
+export const AdultFilter = [ "sex, boob, cum, blowjob, ass" ];
 
 export function FilterAdultContent(content)
 {

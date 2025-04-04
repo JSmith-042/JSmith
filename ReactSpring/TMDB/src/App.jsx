@@ -28,7 +28,7 @@ function App() {
         };
         axios(options)
             .then(response => {
-                setSearchResults(response.data.results);}
+                setSearchResults(FilterAdultContent(response.data.results));}
         )
             .catch(error => {
                 console.log("Unable to connect to TMDB")
