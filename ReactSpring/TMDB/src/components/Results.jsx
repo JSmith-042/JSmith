@@ -8,12 +8,8 @@ export default function Results({data})
 
     const {movies} = data;
 
-    console.log(data)
-
     if (!movies)
         return <></>
-
-    console.log(data)
 
      return <Grid container spacing={2}>
          {movies.map((movie, index) => {return <Grid size={4} key={index}><Card key={movie.id} movie={movie}/></Grid>})}
