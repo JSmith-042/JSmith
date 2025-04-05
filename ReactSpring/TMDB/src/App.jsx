@@ -7,7 +7,7 @@ import Error from "./components/Error.jsx"
 import axios from "axios";
 import {SearchContext} from "./components/SearchContext.jsx";
 import {Button} from "@mui/material";
-import {AdultFilter, FilterAdultContent} from "./components/AdultFilter.js";
+import {FilterAdultContent} from "./components/AdultFilter.js";
 
 function App() {
 
@@ -16,7 +16,6 @@ function App() {
   const [searchResults, setSearchResults] = useState("");
 
     useEffect(() => {
-        console.log(searchContext)
         const options = {
             method: 'GET',
             url: `https://api.themoviedb.org/3/search/movie?query=${searchContext}`,
@@ -28,7 +27,10 @@ function App() {
         };
         axios(options)
             .then(response => {
-                setSearchResults(FilterAdultContent(response.data.results));}
+                const filtered = FilterAdultContent(response.data.results);
+                let removedCount = response.data.results.length - filtered.length;
+                console.log("filter blocked#: " + removedCount);
+                setSearchResults(filtered);}
         )
             .catch(error => {
                 console.log("Unable to connect to TMDB")
@@ -68,7 +70,7 @@ function App() {
                             <Route path={"/error"} element=<Error/>/>
                         </Routes>
                     </div>
-            </SearchContext.Provide
+            </SearchContext.Provider>
             <Button onClick={handleShow}>Click me</Button>
         </div>
       </Router>

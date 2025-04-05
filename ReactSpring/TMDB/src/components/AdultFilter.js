@@ -1,17 +1,17 @@
-export const AdultFilter = [ "sex", "boob", "cum", "blowjob", "ass", "breasts", "pleasuring", "penis" ];
-
-export function FilterAdultContent(content)
+export function FilterAdultContent(contentArray)
 {
-    content = content.map((row,index)=>{AdultFilter.forEach((filter)=> {
-        if (row.overview.toLowerCase().includes(filter) || row.title.toLowerCase().includes(filter)) {
-            {
-                console.log("inside filter: " + filter)
-                console.log(row);
-                row = {id: "blockxx" + index, title: "Blocked", overview: "Content Blocked by Adult Filter"}
-            }
-        }})
-        return row;
-    });
+    if (contentArray.length === 0)
+        return
 
-    return content;
+    const adultFilterArray = [ "sex", "boob", "cum", "blowjob", "ass", "breasts", "pleasuring", "penis"];
+
+    const filterContent = (contentArray) => {
+        return contentArray.filter(content =>
+            !(adultFilterArray.some(filterString => {
+                return (content.overview === "" || (content.title.toLowerCase().includes(filterString)) || (content.overview.toLowerCase().includes(filterString)))
+            }))
+        );
+    }
+
+    return filterContent(contentArray);
 }
