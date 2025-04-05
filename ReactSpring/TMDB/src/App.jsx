@@ -14,6 +14,7 @@ function App() {
   const [nowPlayingMovies, setNowPlayingMovies] = useState("");
   const [searchContext, setSearchContext] = useState("");
   const [searchResults, setSearchResults] = useState("");
+    const [errorStatus, setErrorStatus] = useState("")
 
     useEffect(() => {
         const options = {
@@ -28,12 +29,11 @@ function App() {
         axios(options)
             .then(response => {
                 const filtered = FilterAdultContent(response.data.results);
-                let removedCount = response.data.results.length - filtered.length;
-                console.log("filter blocked#: " + removedCount);
                 setSearchResults(filtered);}
         )
             .catch(error => {
-                console.log("Unable to connect to TMDB")
+                setErrorStatus("Sorry, unable to connect to TMDB")
+                console.log(error)
             })
     }, [searchContext]);
 
@@ -51,7 +51,7 @@ function App() {
         .then(response => {
           setNowPlayingMovies(FilterAdultContent(response.data.results))})
         .catch(error => {
-          console.log("Unable to connect to TMDB");
+            setErrorStatus("Sorry, unable to connect to TMDB")
             console.log(error)
         })
   }
