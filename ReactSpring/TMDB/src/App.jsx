@@ -8,6 +8,7 @@ import axios from "axios";
 import {SearchContext} from "./components/SearchContext.jsx";
 import {Button} from "@mui/material";
 import {FilterAdultContent} from "./components/AdultFilter.js";
+import Theme from "./components/ui/Theme.jsx";
 
 function App() {
 
