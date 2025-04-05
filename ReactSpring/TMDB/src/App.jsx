@@ -59,12 +59,14 @@ function App() {
       <Router>
         <div className="App">
             <SearchContext.Provider value={[searchContext, setSearchContext]}>
-            <NavBar></NavBar>
-            <Routes>
-              <Route path={"/"} element=<></>/>
-              <Route path={"/now_playing"} element=<Results data={{movies: nowPlayingMovies}}/>/>
-              <Route path={"/search"} element=<Results data={{movies: searchResults}} search={true}/>/>
-            </Routes>
+                <NavBar></NavBar>
+                    <div style={{marginTop: "75px"}}>
+                        <Routes>
+                            <Route path={"/"} element=<></>/>
+                            <Route path={"/now_playing"} element=<Results data={{movies: nowPlayingMovies}}/>/>
+                            <Route path={"/search"} element=<Results data={{movies: searchResults}} search={true}/>/>
+                        </Routes>
+                    </div>
             </SearchContext.Provider>
             <Button onClick={handleShow}>Click me</Button>
         </div>

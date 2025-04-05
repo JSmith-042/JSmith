@@ -1,14 +1,25 @@
-export const AdultFilter = [ "sex, boob, cum, blowjob, ass" ];
+export const AdultFilter = [ "sex", "boob", "cum", "blowjob", "ass", "breasts", "pleasuring", "penis" ];
 
 export function FilterAdultContent(content)
 {
+    console.log("before filter")
     console.log(content)
 
-    content = content.map((row)=>{AdultFilter.forEach((filter)=>{if (row.overview.includes(filter)){
-        console.log(filter)
-        console.log(row); row = ""}
-        console.log(row); return row})});
+    content = content.map((row,index)=>{AdultFilter.forEach((filter)=> {
 
+        console.log(row.overview)
+        console.log(row.overview.includes(filter))
+        console.log(filter)
+        if (row.overview.toLowerCase().includes(filter) || row.title.toLowerCase().includes(filter)) {
+            {
+                console.log("inside filter: " + filter)
+                console.log(row);
+                row = {id: "blockxx" + index, title: "Blocked", overview: "Content Blocked by Adult Filter"}
+            }
+        }})
+        return row;
+    });
+    console.log("after filter")
     console.log(content)
     return content;
 }

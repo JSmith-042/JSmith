@@ -35,7 +35,7 @@ export default function NavBar()
     }
 
     return (<Box sx={{ flexGrow: 1 }}>
-        <AppBar position="sticky">
+        <AppBar position="fixed">
             <Toolbar>
                 <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
                     <Link to="/">
