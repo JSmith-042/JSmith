@@ -2,14 +2,7 @@ export const AdultFilter = [ "sex", "boob", "cum", "blowjob", "ass", "breasts", 
 
 export function FilterAdultContent(content)
 {
-    console.log("before filter")
-    console.log(content)
-
     content = content.map((row,index)=>{AdultFilter.forEach((filter)=> {
-
-        console.log(row.overview)
-        console.log(row.overview.includes(filter))
-        console.log(filter)
         if (row.overview.toLowerCase().includes(filter) || row.title.toLowerCase().includes(filter)) {
             {
                 console.log("inside filter: " + filter)
@@ -19,7 +12,6 @@ export function FilterAdultContent(content)
         }})
         return row;
     });
-    console.log("after filter")
-    console.log(content)
+
     return content;
 }

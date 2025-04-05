@@ -65,6 +65,7 @@ function App() {
                             <Route path={"/"} element=<></>/>
                             <Route path={"/now_playing"} element=<Results data={{movies: nowPlayingMovies}}/>/>
                             <Route path={"/search"} element=<Results data={{movies: searchResults}} search={true}/>/>
+                            <Route path={"/error"} element=<Error/>/>
                         </Routes>
                     </div>
             </SearchContext.Provider>
