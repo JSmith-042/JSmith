@@ -1,8 +1,6 @@
 import { createTheme } from '@mui/system';
 
-export default function Theme()
-{
-    return createTheme({
+export const Theme = createTheme({
         palette: {
             background: {
                 paper: '#fff',
@@ -19,4 +17,3 @@ export default function Theme()
             },
         },
     });
-}

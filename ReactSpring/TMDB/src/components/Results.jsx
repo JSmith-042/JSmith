@@ -1,21 +1,25 @@
 import Card from "./Card.jsx";
-import {Grid} from "@mui/material";
+import {Box, Grid} from "@mui/material";
 
-export default function Results({data, search})
+export default function Results({data, blkCnt})
 {
-    if (!data) {
-        if(search)
-            return <h1>Searching...</h1>
-        return <></>
-    }
-
     const {movies} = data;
 
-    if (!movies)
-        return <></>
+    if (!movies) {
+        return <Box sx={{textAlign: "center", color: "green", maxHeight: "15px"}}>
+            <p style={{fontSize: "2vw"}}>No Movie Results Found</p>
+        </Box>
+    }
 
-     return <Grid container spacing={2}>
-         {movies.map((movie, index) => {return <Grid size={4} key={index}><Card key={movie.id} movie={movie}/></Grid>})}
-     </Grid>
+     return <>
+     {blkCnt !== 0 ? <Box sx={{textAlign:"center", color: "green", maxHeight:"15px"}}>
+             <p style={{fontSize: "2vw"}}>[{blkCnt}] Results Blocked By Adult Content Filter</p>
+         </Box> : null}
+         <Grid container spacing={2}>
+             {movies.map((movie, index) => {
+                 return <Grid size={4} key={index}><Card key={movie.id} movie={movie}/></Grid>
+             })}
+         </Grid>
+     </>
 
 }

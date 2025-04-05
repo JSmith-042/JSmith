@@ -8,16 +8,17 @@ import axios from "axios";
 import {SearchContext} from "./components/SearchContext.jsx";
 import {Button} from "@mui/material";
 import {FilterAdultContent} from "./components/AdultFilter.js";
-import Theme from "./components/ui/Theme.jsx";
 
 function App() {
 
   const [nowPlayingMovies, setNowPlayingMovies] = useState("");
   const [searchContext, setSearchContext] = useState("");
   const [searchResults, setSearchResults] = useState("");
-    const [errorStatus, setErrorStatus] = useState("")
+  const [errorStatus, setErrorStatus] = useState("");
+    const [blockedCount, setBlockedCount] = useState(0)
 
     useEffect(() => {
+        setBlockedCount(0);
         setErrorStatus("");
         const options = {
             method: 'GET',
@@ -31,6 +32,9 @@ function App() {
         axios(options)
             .then(response => {
                 const filtered = FilterAdultContent(response.data.results);
+                if (filtered) {
+                     setBlockedCount(response.data.results.length - filtered.length);
+                }
                 setSearchResults(filtered);}
         )
             .catch(error => {
@@ -39,6 +43,7 @@ function App() {
     }, [searchContext]);
 
   const handleShow = () => {
+      setBlockedCount(0);
       setErrorStatus("");
     const options = {
       method: 'GET',
@@ -51,14 +56,15 @@ function App() {
     };
     axios(options)
         .then(response => {
-          setNowPlayingMovies(FilterAdultContent(response.data.results))})
+            const filtered = FilterAdultContent(response.data.results);
+            if (filtered) {
+                setBlockedCount(response.data.results.length - filtered.length);
+            }
+          setNowPlayingMovies(filtered)})
         .catch(error => {
             setErrorStatus("Sorry, unable to connect to TMDB")
         })
   }
-
-  if (errorStatus)
-    console.log(errorStatus)
 
   return (
     <>
@@ -73,8 +79,8 @@ function App() {
                                     <Button onClick={handleShow}>Show movies now playing</Button>
                                 </Link>
                             </div>} />
-                            <Route path={"/now_playing"} element={errorStatus ? <Navigate to={"/error"}/> : <Results data={{movies: nowPlayingMovies}}/>}/>
-                            <Route path={"/search"} element={errorStatus ? <Navigate to={"/error"}/> : <Results data={{movies: searchResults}} search={true}/>}/>
+                            <Route path={"/now_playing"} element={errorStatus ? <Navigate to={"/error"}/> : <Results data={{movies: nowPlayingMovies}} blkCnt={blockedCount}/>}/>
+                            <Route path={"/search"} element={errorStatus ? <Navigate to={"/error"}/> : <Results data={{movies: searchResults}} blkCnt={blockedCount}/>}/>
                             <Route path={"/error"} element=<Error/>/>
                         </Routes>
                     </div>

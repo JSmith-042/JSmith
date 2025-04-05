@@ -14,8 +14,9 @@ import {useNavigate} from "react-router-dom";
 import {useContext, useEffect, useState} from "react";
 import {SearchContext} from "./SearchContext.jsx";
 
-export default function NavBar()
+export default function NavBar({data})
 {
+    const {movies} = data;
     const navigate = useNavigate();
     const [searchContext, setSearchContext] = useContext(SearchContext);
 
