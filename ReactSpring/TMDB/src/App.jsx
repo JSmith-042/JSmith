@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import './App.css'
-import {Route, BrowserRouter as Router, Routes} from "react-router-dom";
+import {Route, BrowserRouter as Router, Routes, Link} from "react-router-dom";
 import NavBar from "./components/NavBar.jsx";
 import Results from "./components/Results.jsx";
 import Error from "./components/Error.jsx"
@@ -64,14 +64,17 @@ function App() {
                 <NavBar></NavBar>
                     <div style={{marginTop: "75px"}}>
                         <Routes>
-                            <Route path={"/"} element=<><h1 style={{color:"green", textAlign:"center"}}>Welcome to the movie database</h1></>/>
+                            <Route path={"/"} element={<div style={{textAlign:"center"}}><h1 style={{color:"green"}}>Welcome to the movie database</h1>
+                                <Link to="/now_playing">
+                                    <Button onClick={handleShow}>Show movies now playing</Button>
+                                </Link>
+                            </div>} />
                             <Route path={"/now_playing"} element=<Results data={{movies: nowPlayingMovies}}/>/>
                             <Route path={"/search"} element=<Results data={{movies: searchResults}} search={true}/>/>
                             <Route path={"/error"} element=<Error/>/>
                         </Routes>
                     </div>
             </SearchContext.Provider>
-            <Button onClick={handleShow}>Click me</Button>
         </div>
       </Router>
     </>
