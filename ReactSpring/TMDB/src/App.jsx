@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import './App.css'
-import {Route, BrowserRouter as Router, Routes, Link} from "react-router-dom";
+import {Route, BrowserRouter as Router, Routes, Link, Navigate} from "react-router-dom";
 import NavBar from "./components/NavBar.jsx";
 import Results from "./components/Results.jsx";
 import Error from "./components/Error.jsx"
@@ -17,6 +17,7 @@ function App() {
     const [errorStatus, setErrorStatus] = useState("")
 
     useEffect(() => {
+        setErrorStatus("");
         const options = {
             method: 'GET',
             url: `https://api.themoviedb.org/3/search/movie?query=${searchContext}`,
@@ -33,11 +34,11 @@ function App() {
         )
             .catch(error => {
                 setErrorStatus("Sorry, unable to connect to TMDB")
-                console.log(error)
             })
     }, [searchContext]);
 
   const handleShow = () => {
+      setErrorStatus("");
     const options = {
       method: 'GET',
       url: 'https://api.themoviedb.org/3/movie/now_playing',
@@ -52,9 +53,11 @@ function App() {
           setNowPlayingMovies(FilterAdultContent(response.data.results))})
         .catch(error => {
             setErrorStatus("Sorry, unable to connect to TMDB")
-            console.log(error)
         })
   }
+
+  if (errorStatus)
+    console.log(errorStatus)
 
   return (
     <>
@@ -69,8 +72,8 @@ function App() {
                                     <Button onClick={handleShow}>Show movies now playing</Button>
                                 </Link>
                             </div>} />
-                            <Route path={"/now_playing"} element=<Results data={{movies: nowPlayingMovies}}/>/>
-                            <Route path={"/search"} element=<Results data={{movies: searchResults}} search={true}/>/>
+                            <Route path={"/now_playing"} element={errorStatus ? <Navigate to={"/error"}/> : <Results data={{movies: nowPlayingMovies}}/>}/>
+                            <Route path={"/search"} element={errorStatus ? <Navigate to={"/error"}/> : <Results data={{movies: searchResults}} search={true}/>}/>
                             <Route path={"/error"} element=<Error/>/>
                         </Routes>
                     </div>
