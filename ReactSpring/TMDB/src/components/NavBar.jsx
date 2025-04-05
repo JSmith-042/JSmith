@@ -16,7 +16,6 @@ import {SearchContext} from "./SearchContext.jsx";
 
 export default function NavBar({data})
 {
-    const {movies} = data;
     const navigate = useNavigate();
     const [searchContext, setSearchContext] = useContext(SearchContext);
 
