@@ -1,7 +1,7 @@
 :root
 {
     background-color: darkred;
-    background-image: url("/assets/theatreBG.jpg");
+    background-image: url("./assets/theatreBG.jpg");
     background-size: cover;
     background-attachment: fixed;
 }

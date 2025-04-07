@@ -1,19 +1,18 @@
-import { createTheme } from '@mui/system';
+import {createTheme} from "@mui/material";
+import {red} from "@mui/material/colors";
 
 export const Theme = createTheme({
-        palette: {
-            background: {
-                paper: '#fff',
-            },
-            text: {
-                primary: '#173A5E',
-                secondary: '#46505A',
-            },
-            action: {
-                active: '#001E3C',
-            },
-            success: {
-                dark: '#009688',
-            },
+    palette: {
+        primary: {
+            main: '#19b0d2',
+            light: '#42a5f5',
+            dark: '#075ebe',
         },
-    });
+        secondary: {
+            main: '#be1bbb'
+        },
+        text: {
+          main: "#000000"
+        }
+    }
+});
