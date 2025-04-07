@@ -46,11 +46,11 @@ export default function NavBar({data})
         <AppBar position="fixed">
             <Toolbar>
                 <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
-                    <Link to="/">
-                        <Button color="inherit">Home</Button>
+                    <Link to="/" style={{paddingRight:"20px"}}>
+                        <Button color="inherit" variant="outlined">Home</Button>
                     </Link>
                     <Link to={!data ? "/" : "/now_playing"} style={disabledLinkStyle}>
-                        <Button color="inherit" >Now Playing</Button>
+                        <Button color="inherit" variant="outlined" >Now Playing</Button>
                     </Link>
                 </Typography>
                     <TextField color="inherit" label="Search" onChange={debounce(handleSearch, 250)} slotProps={{input: { endAdornment: (<SearchOutlined color="inherit"></SearchOutlined>)}}} />
