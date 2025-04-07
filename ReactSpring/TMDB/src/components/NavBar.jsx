@@ -34,6 +34,14 @@ export default function NavBar({data})
         navigate("/search")
     }
 
+    const disabledLinkStyle = {
+        pointerEvents: !data ? 'none' : 'auto',
+        opacity: !data ? 0.8 : 1,
+        textDecoration: !data ? 'none' : 'underline',
+        cursor: !data ? 'not-allowed' : 'pointer',
+        color: !data ? 'grey' : 'blue',
+    };
+
     return (<Box sx={{ flexGrow: 1 }}>
         <AppBar position="fixed">
             <Toolbar>
@@ -41,8 +49,8 @@ export default function NavBar({data})
                     <Link to="/">
                         <Button color="inherit">Home</Button>
                     </Link>
-                    <Link to="/now_playing">
-                        <Button color="inherit">Now Playing</Button>
+                    <Link to={!data ? "/" : "/now_playing"} style={disabledLinkStyle}>
+                        <Button color="inherit" >Now Playing</Button>
                     </Link>
                 </Typography>
                     <TextField color="inherit" label="Search" onChange={debounce(handleSearch, 250)} slotProps={{input: { endAdornment: (<SearchOutlined color="inherit"></SearchOutlined>)}}} />
