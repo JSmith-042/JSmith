@@ -3,7 +3,7 @@ export function FilterAdultContent(contentArray)
     if (contentArray.length === 0)
         return
 
-    const adultFilterArray = [ "sex", "boob", "cum", "blowjob", "ass", "breasts", "pleasuring", "penis"];
+    const adultFilterArray = [ "sex", "boob", "cum", "blowjob", "ass", "breasts", "pleasuring", "penis", "porn", "gay", "lgbt", "lesbian", "homosexual", "l.g.b.t"];
 
     const filterContent = (contentArray) => {
         return contentArray.filter(content =>
