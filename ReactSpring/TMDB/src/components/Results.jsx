@@ -7,13 +7,13 @@ export default function Results({data, blkCnt})
 
     if (!movies) {
         return <Box sx={{textAlign: "center", color: "green", maxHeight: "15px"}}>
-            <Typography style={{fontSize: "2vw"}}>No Movie Results Found</Typography>
+            <Typography style={{fontSize: "2vw"}} color="info">No Movie Results Found</Typography>
         </Box>
     }
 
      return <>
      {blkCnt !== 0 ? <Box sx={{textAlign:"center", color: "green", p:"1px"}}>
-             <Typography style={{fontSize: "2vw"}}>[{blkCnt}] Results Blocked By Adult Content Filter</Typography>
+             <Typography style={{fontSize: "2vw"}} color="info">[{blkCnt}] Results Blocked By Adult Content Filter</Typography>
          </Box> : null}
          <Grid container spacing={2}>
              {movies.map((movie, index) => {

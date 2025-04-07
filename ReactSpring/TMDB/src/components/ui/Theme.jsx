@@ -13,6 +13,9 @@ export const Theme = createTheme({
         text: {
           main: "#000000"
         },
+        info:{
+            main: '#05f605',
+        },
         background:
             {
                 paper: "#f19e9e"

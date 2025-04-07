@@ -81,7 +81,7 @@ function App() {
                                 <Routes>
                                     <Route path={"/"}
                                            element={<div style={{textAlign: "center"}}><Typography variant={"h3"}
-                                               style={{color: "green", fontSize:"3vw", padding: 20}}>Welcome
+                                               style={{fontSize:"3vw", padding: 20}} color="info">Welcome
                                                to the movie database</Typography>
                                                <Link to="/now_playing">
                                                    <Button onClick={handleShow} variant={"contained"}>Show movies now playing</Button>
