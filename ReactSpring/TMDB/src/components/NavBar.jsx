@@ -2,16 +2,14 @@ import {Link} from "react-router-dom";
 import {
     AppBar,
     Box,
-    Button, IconButton,
-    InputBase,
+    Button,
     TextField,
     Toolbar,
     Typography
 } from "@mui/material";
 import { SearchOutlined } from "@mui/icons-material";
-import axios from "axios";
 import {useNavigate} from "react-router-dom";
-import {useContext, useEffect, useState} from "react";
+import {useContext, useState} from "react";
 import {SearchContext} from "./SearchContext.jsx";
 
 export default function NavBar({data})
