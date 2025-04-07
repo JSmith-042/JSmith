@@ -66,12 +66,14 @@ function App() {
         })
   }
 
+
+
   return (
     <>
       <Router>
         <div className="App">
             <SearchContext.Provider value={[searchContext, setSearchContext]}>
-                <NavBar></NavBar>
+                <NavBar data={nowPlayingMovies}></NavBar>
                     <div style={{marginTop: "75px"}}>
                         <Routes>
                             <Route path={"/"} element={<div style={{textAlign:"center"}}><h1 style={{color:"green"}}>Welcome to the movie database</h1>
