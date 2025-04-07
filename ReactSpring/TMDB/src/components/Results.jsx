@@ -1,5 +1,5 @@
 import Card from "./Card.jsx";
-import {Box, Grid} from "@mui/material";
+import {Box, Grid, Typography} from "@mui/material";
 
 export default function Results({data, blkCnt})
 {
@@ -7,13 +7,13 @@ export default function Results({data, blkCnt})
 
     if (!movies) {
         return <Box sx={{textAlign: "center", color: "green", maxHeight: "15px"}}>
-            <p style={{fontSize: "2vw"}}>No Movie Results Found</p>
+            <Typography style={{fontSize: "2vw"}}>No Movie Results Found</Typography>
         </Box>
     }
 
      return <>
-     {blkCnt !== 0 ? <Box sx={{textAlign:"center", color: "green", maxHeight:"15px"}}>
-             <p style={{fontSize: "2vw"}}>[{blkCnt}] Results Blocked By Adult Content Filter</p>
+     {blkCnt !== 0 ? <Box sx={{textAlign:"center", color: "green", p:"1px"}}>
+             <Typography style={{fontSize: "2vw"}}>[{blkCnt}] Results Blocked By Adult Content Filter</Typography>
          </Box> : null}
          <Grid container spacing={2}>
              {movies.map((movie, index) => {

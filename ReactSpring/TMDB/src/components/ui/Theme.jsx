@@ -1,5 +1,4 @@
 import {createTheme} from "@mui/material";
-import {red} from "@mui/material/colors";
 
 export const Theme = createTheme({
     palette: {
@@ -13,6 +12,10 @@ export const Theme = createTheme({
         },
         text: {
           main: "#000000"
-        }
+        },
+        background:
+            {
+                paper: "#f19e9e"
+            }
     }
 });

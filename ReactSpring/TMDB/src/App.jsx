@@ -6,7 +6,7 @@ import Results from "./components/Results.jsx";
 import Error from "./components/Error.jsx"
 import axios from "axios";
 import {SearchContext} from "./components/SearchContext.jsx";
-import {Button, ThemeProvider} from "@mui/material";
+import {Button, ThemeProvider, Typography} from "@mui/material";
 import {FilterAdultContent} from "./components/AdultFilter.js";
 import {Theme} from "./components/ui/Theme.jsx";
 
@@ -80,9 +80,9 @@ function App() {
                             <div style={{marginTop: "75px"}}>
                                 <Routes>
                                     <Route path={"/"}
-                                           element={<div style={{textAlign: "center"}}><h1
-                                               style={{color: "green"}}>Welcome
-                                               to the movie database</h1>
+                                           element={<div style={{textAlign: "center"}}><Typography variant={"h3"}
+                                               style={{color: "green", fontSize:"3vw", padding: 20}}>Welcome
+                                               to the movie database</Typography>
                                                <Link to="/now_playing">
                                                    <Button onClick={handleShow} variant={"contained"}>Show movies now playing</Button>
                                                </Link>
