@@ -13,8 +13,7 @@ export default function Card({movie})
         posterImage = `https://image.tmdb.org/t/p/w500${poster_path}`;
 
 
-    return  <Paper elevation={16} style={{height: "50vw", textAlign: "center"}}>
-
+    return  <Paper elevation={16} style={{height: "50vw", textAlign: "center", borderRadius: "30px", padding:10}}>
         <Typography sx={{fontSize: "2vw"}} color={"secondary"}>{title}</Typography>
         <img src={posterImage} alt={title} style={{width:"50%"}}/>
         <Typography sx={{fontSize: "1.3vw", overscrollBehavior: "auto", scrollBehavior:"smooth"}}>{overview}</Typography>
